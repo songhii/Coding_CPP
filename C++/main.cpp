@@ -1,14 +1,11 @@
-//
-//  main.cpp
-//  C++
-//
-//  Created by songhee on 2020/11/26.
-//
-
 #include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main(void)
+{
+    int money = 1000;
+    double interest = 30 * 0.01;
+    money += (money * interest);
+    cout << money << endl;
     return 0;
 }
