@@ -8,7 +8,6 @@
 #ifndef HighCreditAccount_hpp
 #define HighCreditAccount_hpp
 
-#include "Account.hpp"
 #include "NormalAccount.hpp"
 
 class HighCreditAccount : public NormalAccount
@@ -17,11 +16,11 @@ private:
     int rank;
     
 public:
-    HighCreditAccount(int ID, char* name, int balance, int rate, int rank);
+    HighCreditAccount(int ID, String name, int balance, int rate, int rank);
     virtual void Deposit(int money);
 };
 
-HighCreditAccount::HighCreditAccount(int ID, char* name, int balance, int rate, int rank)
+HighCreditAccount::HighCreditAccount(int ID, String name, int balance, int rate, int rank)
 : NormalAccount(ID, name, balance, rate), rank(rank)
 { }
 

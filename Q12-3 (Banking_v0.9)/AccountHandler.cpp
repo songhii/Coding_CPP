@@ -7,6 +7,7 @@
 
 #include "AccountHandler.hpp"
 #include "BankingCommonDecl.hpp"
+#include "Account.hpp"
 #include "NormalAccount.hpp"
 #include "HighCreditAccount.hpp"
 
@@ -49,7 +50,8 @@ void AccountHandler::MakeAccount()
 void AccountHandler::MakeNormal()
 {
     int id;
-    char name[NAME_LEN];
+//    char name[NAME_LEN];
+    String name;
     int bal;
     int rate;
     
@@ -58,6 +60,7 @@ void AccountHandler::MakeNormal()
     cin >> id;
     cout << "이름: ";
     cin >> name;
+//    cout << "### name 객체: " << name << endl;
     cout << "입금액: ";
     cin >> bal;
     cout << "이자율: ";
@@ -70,7 +73,8 @@ void AccountHandler::MakeNormal()
 void AccountHandler::MakeHighCredit()
 {
     int id;
-    char name[NAME_LEN];
+//    char name[NAME_LEN];
+    String name;
     int bal;
     int rate;
     int rank;

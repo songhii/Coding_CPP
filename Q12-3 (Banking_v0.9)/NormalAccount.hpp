@@ -16,11 +16,11 @@ private:
     int rate;
     
 public:
-    NormalAccount(int ID, char* name, int balance, int rate);
+    NormalAccount(int ID, String name, int balance, int rate);
     virtual void Deposit(int money);
 };
 
-NormalAccount::NormalAccount(int ID, char* name, int balance, int rate)
+NormalAccount::NormalAccount(int ID, String name, int balance, int rate)
 : Account(ID, name, balance), rate(rate)
 { }
 

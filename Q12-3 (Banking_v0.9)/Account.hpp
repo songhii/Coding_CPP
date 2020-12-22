@@ -8,23 +8,26 @@
 #ifndef Account_hpp
 #define Account_hpp
 
+#include "String.hpp"
+
 class Account
 {
 private:
     int ID;
-    char *name;
+    String cusName;
+//    char *name;
     int balance;
     
 public:
-    Account(int ID, char *name, int balance);
-    Account(const Account& copy);
-    Account& operator=(const Account& ref);
+    Account(int ID, String name, int balance);
+//    Account(const Account& copy);
+//    Account& operator=(const Account& ref);
     
     int GetID() const;
     virtual void Deposit(int money);
     void Withdraw(int money);
     void ShowInfo() const;
-    ~Account();
+//    ~Account();
 };
 
 #endif /* Account_hpp */
