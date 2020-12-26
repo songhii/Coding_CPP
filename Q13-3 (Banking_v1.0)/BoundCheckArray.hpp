@@ -22,7 +22,7 @@ private:
     BoundCheckArray& operator=(const BoundCheckArray& arr) { }
 
 public:
-    BoundCheckArray(int len) :arrlen(len)
+    BoundCheckArray(int len = 100) :arrlen(len)
     {
         arr=new T[len];
     }

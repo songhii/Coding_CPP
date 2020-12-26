@@ -16,7 +16,7 @@ class AccountHandler
 private:
     int arrIdx;
 //    BoundCheckAccountPtrArray aptr;
-    BoundCheckArray<Account*> aptr;
+    BoundCheckArray<Account*> accArr;
     
 public:
     AccountHandler();

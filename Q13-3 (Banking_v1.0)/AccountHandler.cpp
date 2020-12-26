@@ -5,8 +5,8 @@
 //  Created by songhee on 2020/12/11.
 //
 
-#include "AccountHandler.hpp"
 #include "BankingCommonDecl.hpp"
+#include "AccountHandler.hpp"
 #include "Account.hpp"
 #include "NormalAccount.hpp"
 #include "HighCreditAccount.hpp"
@@ -67,7 +67,7 @@ void AccountHandler::MakeNormal()
     cin >> rate;
     cout << endl;
     
-    aptr[arrIdx++] = new NormalAccount(id, name, bal, rate);
+    accArr[arrIdx++] = new NormalAccount(id, name, bal, rate);
 }
 
 void AccountHandler::MakeHighCredit()
@@ -104,7 +104,7 @@ void AccountHandler::MakeHighCredit()
     }
     cout << endl;
     
-    aptr[arrIdx++] = new HighCreditAccount(id, name, bal, rate, rank);
+    accArr[arrIdx++] = new HighCreditAccount(id, name, bal, rate, rank);
 }
 
 void AccountHandler::DepositMoney()
@@ -120,7 +120,7 @@ void AccountHandler::DepositMoney()
     bool check = false;
     for(i = 0; i < arrIdx; i++)
     {
-        if(aptr[i]->GetID() == id)
+        if(accArr[i]->GetID() == id)
         {
             check = true;
             break;
@@ -128,7 +128,7 @@ void AccountHandler::DepositMoney()
     }
     if(check)
     {
-        aptr[i]->Deposit(money);
+        accArr[i]->Deposit(money);
         cout << "입금완료" << endl;
     }
     else
@@ -149,7 +149,7 @@ void AccountHandler::WithdrawMoney()
     bool check = false;
     for(i = 0; i < arrIdx; i++)
     {
-        if(aptr[i]->GetID() == id)
+        if(accArr[i]->GetID() == id)
         {
             check = true;
             break;
@@ -157,7 +157,7 @@ void AccountHandler::WithdrawMoney()
     }
     if(check)
     {
-        aptr[i]->Withdraw(money);
+        accArr[i]->Withdraw(money);
         cout << "출금완료" << endl;
     }
     else
@@ -170,7 +170,7 @@ void AccountHandler::ShowAllInfo()
     cout << "[계좌정보 전체 출력]" << endl;
     for(int i = 0; i < arrIdx; i++)
     {
-        aptr[i]->ShowInfo();
+        accArr[i]->ShowInfo();
     }
     cout << endl;
 }
@@ -179,6 +179,6 @@ AccountHandler::~AccountHandler()
 {
     for(int i = 0; i < arrIdx; i++)
     {
-        delete aptr[i];
+        delete accArr[i];
     }
 }
